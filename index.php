@@ -55,66 +55,98 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["id"])  ){
 </head>
 <style>
 
+@font-face {
+    font-family: popins;
+    src: url("fonts/Poppins-Bold.ttf");
+}
+
+
 body {
     background: rgba(0,0,0, .2);
+    font-family: popins;
+
+}
+
+.hdr {
+    background: rgba(46,186,200, .5);
 
 }
 
 
+.center{
+    text-align: center;
+}
+
+.container {
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+    
+}
 
 </style>
 
 <body>
 
+<nav class="navbar navbar-dark bg-primary fixed-top">
+    <div class="col-md-12 center">
+        <h2 style="color:black;">
+            OLYMPIC ATHLETES
+        </h2>
+    </div>
+</nav>
+
+
+
+
 <div class="container">
-<div class="row">    
-    <div class="col-4">
-        <form class="form" action="" method="POST">
+    <div class="row">    
+        <div class="col-4">
+            <form class="form" action="" method="POST">
     
 
 
 
-        <div class="form-group row">
-            <label class="col-sm-4 col-form-label" >Name</label>
-            <div class="col-sm-6">
-                <input class="form-control" type="text" name="name" value="<?= (isset($athlete))? $athlete["name"] : "" ?>">
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label" >Name</label>
+                <div class="col-sm-6">
+                    <input class="form-control" type="text" name="name" value="<?= (isset($athlete))? $athlete["name"] : "" ?>">
+                </div>
             </div>
-         </div>
 
-         <div class="form-group row">
-            <label class="col-sm-4 col-form-label" >Surname</label>
-            <div class="col-sm-6">
-                <input class="form-control" type="text" name="surname" value="<?= (isset($athlete))? $athlete["surname"] : "" ?>">
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label" >Surname</label>
+                <div class="col-sm-6">
+                    <input class="form-control" type="text" name="surname" value="<?= (isset($athlete))? $athlete["surname"] : "" ?>">
+                </div>
             </div>
-         </div>
 
-         <div class="form-group row">
-            <label class="col-sm-4 col-form-label" >Sport</label>
-            <div class="col-sm-6">
-                <input class="form-control" type="text" name="sport" value="<?= (isset($athlete))? $athlete["sport"] : "" ?>">
-            </div>  
-         </div>
-
-         <div class="form-group row">
-            <label class="col-sm-4 col-form-label" >Country</label>
-            <div class="col-sm-6">
-                <input class="form-control" type="text" name="country" value="<?= (isset($athlete))? $athlete["country"] : "" ?>">
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label" >Sport</label>
+                <div class="col-sm-6">
+                    <input class="form-control" type="text" name="sport" value="<?= (isset($athlete))? $athlete["sport"] : "" ?>">
+                </div>  
             </div>
-         </div>
 
-         <div class="form-group row">
-            <label class="col-sm-4 col-form-label" >Gender</label>
-            <div class="col-sm-6">
-                <input class="form-control" type="text" name="gender" value="<?= (isset($athlete))? $athlete["gender"] : "" ?>">
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label" >Country</label>
+                <div class="col-sm-6">
+                    <input class="form-control" type="text" name="country" value="<?= (isset($athlete))? $athlete["country"] : "" ?>">
+                </div>
             </div>
-         </div>
 
-         <div class="form-group row">
-            <label class="col-sm-4 col-form-label" >Victories</label>
-            <div class="col-sm-6">
-                <input class="form-control" type="text" name="victories" value="<?= (isset($athlete))? $athlete["victories"] : "" ?>">
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label" >Gender</label>
+                <div class="col-sm-6">
+                    <input class="form-control" type="text" name="gender" value="<?= (isset($athlete))? $athlete["gender"] : "" ?>">
+                </div>
             </div>
-         </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label" >Victories</label>
+                <div class="col-sm-6">
+                    <input class="form-control" type="text" name="victories" value="<?= (isset($athlete))? $athlete["victories"] : "" ?>">
+                </div>
+            </div>
 
          
 
@@ -122,35 +154,35 @@ body {
 
 
 
-    <?php if(!isset($athlete)){
+            <?php if(!isset($athlete)){
             echo '<button class="btn btn-primary" type="submit">Add athlete</button>';
-    }else{
+            }else{
             echo '
             <input type="hidden" name="id" value="'. $athlete["id"].' ">
             <button class="btn btn-info" type="submit">Renew data of athlete</button>';
-    } ?>
+            } ?>
 
     
 
     
 
 
-        </form>
-    </div>
+            </form>
+        </div>
 
-    <div class="col-4">
+        <div class="col-4">
         
-    </div>
+        </div>
 
-    <div class="col-4">
-        <img src="img/bcgrd.jpg" height="250px">
-    </div>
+        <div class="col-4">
+            <img src="img/bcgrd.jpg" height="250px">
+        </div>
 
-</div>    
+    </div>    
 </div>
 
 
-    <table class="table">
+    <table class="table hdr">
         <tr>
         <th>Id</th> 
         <th>Name</th> 
