@@ -184,7 +184,7 @@ body {
 
     <table class="table hdr">
         <tr>
-        <th>Id</th> 
+        <th>Nr</th> 
         <th>Name</th> 
         <th>Surname</th>
         <th>Sport</th>
